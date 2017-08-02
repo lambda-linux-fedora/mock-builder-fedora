@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "${1}" ]; then
+    echo "package name not specified"
+    exit 1
+fi
+
+package="${1}.git"
+
+cd /home/ll-user/mock-builder-fedora/build-git-repo
+git clone --bare ../git-repo/${package}
+
+cd /home/ll-user/mock-builder-fedora/build-work
+git clone ../build-git-repo/${package}
