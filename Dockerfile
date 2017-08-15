@@ -1,4 +1,4 @@
-FROM baseimage-fedora:latest
+FROM lambdalinuxfedora/baseimage-fedora
 
 CMD ["/sbin/my_init"]
 
